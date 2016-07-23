@@ -384,7 +384,8 @@ UserCommand(integer iNum, string sStr, key kID, integer fromMenu) {
         if (fromMenu) HelpMenu(kID, iNum);
     } else if (sCmd == "update") {
         if (kID == g_kWearer) {
-            g_iWillingUpdaters = 0;
+			llSay(0, "Update has been disabled in the Xtrem RLV version of this collar!");
+            /*g_iWillingUpdaters = 0;
             g_kCurrentUser = kID;
             g_iUpdateAuth = iNum;
             llMessageLinked(LINK_DIALOG,NOTIFY,"0"+"Searching for nearby updater",kID);
@@ -393,6 +394,7 @@ UserCommand(integer iNum, string sStr, key kID, integer fromMenu) {
             llWhisper(g_iUpdateChan, "UPDATE|" + g_sCollarVersion);
             g_iWaitUpdate = TRUE;
             llSetTimerEvent(5.0); //set a timer to wait for responses from updaters
+			*/
         } else {
             llMessageLinked(LINK_DIALOG,NOTIFY,"0"+"Only the wearer can update the %DEVICETYPE%.",kID);
             if (fromMenu) HelpMenu(kID, iNum);
